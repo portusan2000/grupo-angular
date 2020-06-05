@@ -1,0 +1,32 @@
+<!-- Barra de Navegación -->
+<app-navbar></app-navbar>
+
+<!-- Tabla de Usuarios Registrados -->
+<div class="container">
+    <div class="row p-1 ml-3 mt-4 border border-dark">
+        <div class="col-md-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr class="text-center">
+                        <th scope="col">No.</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Nacimiento</th>
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Sexo</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <tr *ngFor="let d of auth.datos; index as i">
+                        <td>{{ i + 1 }}</td>
+                        <td>{{ d.nombre }}</td>
+                        <td>{{ d.email }}</td>
+                        <td>{{ d.fechaNac | date: 'dd/MM/yyyy' }}</td>
+                        <td>{{ d.telefono }}</td>
+                        <td>{{ d.sexo }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
